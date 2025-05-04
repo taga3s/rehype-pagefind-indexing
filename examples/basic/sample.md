@@ -4,7 +4,8 @@
 
 ### Heading Level 3 (Subsection)
 
-This is a regular paragraph. You can make text **bold**, *italic*, or even ***bold and italic***.
+This is a regular paragraph. You can make text **bold**, _italic_, or even
+_**bold and italic**_.
 
 ---
 
@@ -36,6 +37,6 @@ Multi-line code block:
 
 ```javascript
 function greet() {
-    console.log("Hello, world!");
+  console.log("Hello, world!");
 }
 ```
