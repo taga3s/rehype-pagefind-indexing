@@ -1,0 +1,37 @@
+export const snapshot = {};
+
+snapshot[`rehype-pagefind-indexing 1`] = `
+'<h1>Heading Level 1 (Title)</h1>
+<h2>Heading Level 2 (Section)</h2>
+<h3>Heading Level 3 (Subsection)</h3>
+<p>This is a regular paragraph. You can make text <strong>bold</strong>, <em>italic</em>, or even
+<em><strong>bold and italic</strong></em>.</p>
+<hr>
+<h2>Unordered List</h2>
+<ul>
+<li>Item 1</li>
+<li>Item 2
+<ul>
+<li>Subitem 2.1</li>
+<li>Subitem 2.2</li>
+</ul>
+</li>
+<li>Item 3</li>
+</ul>
+<h2>Ordered List</h2>
+<ol>
+<li>First item</li>
+<li>Second item</li>
+<li>Third item</li>
+</ol>
+<h2>Links and Images</h2>
+<p><a href="https://www.google.com">Visit Google</a></p>
+<p><img src="https://via.placeholder.com/150" alt="Sample Image" data-pagefind-index-attrs="alt,title"></p>
+<h2>Code</h2>
+<p>Inline code looks like this: <code data-pagefind-ignore="all">console.log("Hello, world!");</code></p>
+<p>Multi-line code block:</p>
+<pre><code class="language-javascript" data-pagefind-ignore="all">function greet() {
+  console.log("Hello, world!");
+}
+</code></pre>'
+`;
