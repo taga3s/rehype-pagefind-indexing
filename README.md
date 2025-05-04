@@ -14,7 +14,7 @@ import { unified } from "npm:unified@11.0.5";
 import remarkParse from "npm:remark-parse@11.0.0";
 import remarkRehype from "npm:remark-rehype@11.1.2";
 import rehypeStringify from "npm:rehype-stringify@10.0.1";
-import { rehypePagefindIndexing } from "../../mod.ts";
+import { rehypePagefindIndexing } from "jsr:@taga3s/rehype-pagefind-indexing";
 
 const process = async (text: string): Promise<string> => {
   const result = await unified()
