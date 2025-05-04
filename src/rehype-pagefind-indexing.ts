@@ -1,6 +1,6 @@
-import { Root } from "https://esm.sh/@types/hast@3.0.4";
-import { Plugin, Transformer } from "https://esm.sh/unified@11.0.5/";
-import { visit } from "https://esm.sh/unist-util-visit@5.0.0/";
+import type { Root } from "npm:@types/hast@3.0.4";
+import type { Plugin, Transformer } from "npm:unified@11.0.5/";
+import { visit } from "npm:unist-util-visit@5.0.0/";
 
 type LimitSection = {
   condition: {
