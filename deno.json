@@ -1,4 +1,8 @@
 {
+  "name": "@taga3s/rehype-pagefind-indexing",
+  "version": "0.1.0",
+  "license": "MIT",
+  "exports": "./mod.ts",
   "tasks": {
     "dev:examples": "deno run examples/basic/main.ts",
     "test": "deno test --allow-read",
