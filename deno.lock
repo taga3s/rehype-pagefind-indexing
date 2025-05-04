@@ -1,0 +1,40 @@
+{
+  "version": "5",
+  "redirects": {
+    "https://esm.sh/@types/extend@~3.0.4/index.d.ts": "https://esm.sh/@types/extend@3.0.4/index.d.ts",
+    "https://esm.sh/bail@^2.0.0?target=denonext": "https://esm.sh/bail@2.0.2?target=denonext",
+    "https://esm.sh/devlop@^1.0.0?target=denonext": "https://esm.sh/devlop@1.1.0?target=denonext",
+    "https://esm.sh/extend@^3.0.0?target=denonext": "https://esm.sh/extend@3.0.2?target=denonext",
+    "https://esm.sh/is-plain-obj@^4.0.0?target=denonext": "https://esm.sh/is-plain-obj@4.1.0?target=denonext",
+    "https://esm.sh/trough@^2.0.0?target=denonext": "https://esm.sh/trough@2.2.0?target=denonext",
+    "https://esm.sh/unified@11": "https://esm.sh/unified@11.0.5",
+    "https://esm.sh/unist-util-stringify-position@^4.0.0?target=denonext": "https://esm.sh/unist-util-stringify-position@4.0.0?target=denonext",
+    "https://esm.sh/vfile-message@^4.0.0?target=denonext": "https://esm.sh/vfile-message@4.0.2?target=denonext",
+    "https://esm.sh/vfile@^6.0.0?target=denonext": "https://esm.sh/vfile@6.0.3?target=denonext"
+  },
+  "remote": {
+    "https://esm.sh/bail@2.0.2/denonext/bail.mjs": "384030255809f49c4056a4876ee94a177253d8f3d77d2f150f097c5ce91f8ec6",
+    "https://esm.sh/bail@2.0.2?target=denonext": "4bb045b2ef8bed208c284fdab79fb7b5ae39160febd1c8b35c68d00e858db19b",
+    "https://esm.sh/devlop@1.1.0/denonext/devlop.mjs": "c510d1d2f0a44e17c6658ab69e0e93264c5652fcd2f230e528470248c24047e6",
+    "https://esm.sh/devlop@1.1.0?target=denonext": "e8f34c5946b08720b9d8f089248ef5c6c81481e07ca3bba5d551f92400e5a474",
+    "https://esm.sh/extend@3.0.2/denonext/extend.mjs": "2fcb45893e5be70d629e3c4c6f3100ee1bba03bc672ece1d4ae57c3b88db3a71",
+    "https://esm.sh/extend@3.0.2?target=denonext": "35f0cb416b1c2975321f6cfc0fc0e9ae13d3a83fe90705718880f502a2e22ea4",
+    "https://esm.sh/is-plain-obj@4.1.0/denonext/is-plain-obj.mjs": "b2148bf350315cbc1ea1a04b358367e4daf3a9da53a634220d7f1a42e110ed4e",
+    "https://esm.sh/is-plain-obj@4.1.0?target=denonext": "1816dcb650ccabbf582c01010105a7d09d5138a4745be4d10d21efba5d2513ee",
+    "https://esm.sh/trough@2.2.0/denonext/trough.mjs": "fada5c5b43a3812bc17588a3ff3db5bafb276d50fb97ec8f06bc74f93dca76fb",
+    "https://esm.sh/trough@2.2.0?target=denonext": "8b2d3baca46cd23524f77b1db60ff17176032b1212c5887c23029d410d509ccc",
+    "https://esm.sh/unified@11.0.5": "72e30274eb07271c1cf92faffd5d33b4ecd714032bad012c1eb007ada1e11e01",
+    "https://esm.sh/unified@11.0.5/denonext/unified.mjs": "b08baaf0a903c9d7c0513975d94c6631b35781396131a409b773ab05e080570d",
+    "https://esm.sh/unist-util-stringify-position@4.0.0/denonext/unist-util-stringify-position.mjs": "1e524ff61198426bbdd72735fe7c372b83dbb1c6e5bfa9ab7d0f15268eb65c52",
+    "https://esm.sh/unist-util-stringify-position@4.0.0?target=denonext": "b096f6b3c0936aeeafa56a86945fa7add4e1ec11986f61f09aabe332edab4581",
+    "https://esm.sh/vfile-message@4.0.2/denonext/vfile-message.mjs": "e7f27b18d02e476fc4b2675f1a19291148202a94d0e606a2eec6bffa01263bc7",
+    "https://esm.sh/vfile-message@4.0.2?target=denonext": "df904ecca10a183a9cb55d1497a3778e64f4a47d59edc2821b8dcf16974b759d",
+    "https://esm.sh/vfile@6.0.3/denonext/vfile.mjs": "b446746c9851716929eccc2fba7959efebb504d9bfa8b2ff896010fc6d1faafa",
+    "https://esm.sh/vfile@6.0.3?target=denonext": "327f726bcdb4cf07c2a6f4a5aa0e29941cdf0e44b536cef3b85f7a28b862e423"
+  },
+  "workspace": {
+    "dependencies": [
+      "jsr:@std/assert@1"
+    ]
+  }
+}
