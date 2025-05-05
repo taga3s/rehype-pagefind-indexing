@@ -1,1 +1,4 @@
-export { rehypePagefindIndexing } from "./src/rehype-pagefind-indexing.ts";
+export {
+  type Option,
+  rehypePagefindIndexing,
+} from "./src/rehype-pagefind-indexing.ts";
