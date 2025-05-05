@@ -46,7 +46,10 @@ type Option = {
   addHTMLAttrs?: AddHTMLAttrs[];
 };
 
-const rehypePagefindIndexing: Plugin<Option[], Root> = (
+/**
+ * A rehype plugin to configure Pagefind indexing options
+ */
+export const rehypePagefindIndexing: Plugin<Option[], Root> = (
   option,
 ): Transformer<Root> => {
   // Limit indexing to a specific section by adding `data-pagefind-body`
@@ -126,5 +129,3 @@ const rehypePagefindIndexing: Plugin<Option[], Root> = (
 
   return transformer;
 };
-
-export { rehypePagefindIndexing };
