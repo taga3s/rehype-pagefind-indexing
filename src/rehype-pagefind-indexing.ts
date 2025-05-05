@@ -1,32 +1,33 @@
-import type { Root } from "npm:@types/hast@3.0.4";
+import type { Element, Root } from "npm:@types/hast@3.0.4";
 import type { Plugin, Transformer } from "npm:unified@11.0.5/";
 import { visit } from "npm:unist-util-visit@5.0.0/";
 
-type LimitSection = {
-  condition: {
-    tagName: string;
-    //TODO: add support for more conditions
+type Condition = {
+  tagName?: string;
+  id?: string;
+  class?: {
+    matchAll?: string[];
+    matchAny?: string[];
   };
+  //TODO: add support for more conditions
+};
+
+type LimitSection = {
+  condition: Condition;
 };
 
 type IgnoreIndividualElement = {
-  condition: {
-    tagName: string;
-    //TODO: add support for more conditions
-  };
+  condition: Condition;
   // The default is "index"
   ignore?: "index" | "all";
 };
 
 type AddHTMLAttrs = {
-  condition: {
-    tagName: string;
-    //TODO: add support for more conditions
-  };
+  condition: Condition;
   attrs: string[];
 };
 
-type Option = {
+export type Option = {
   /**
    * Attach `data-pagefind-body` attribute to limit indexing to a specific section
    * @see https://pagefind.app/docs/indexing/#limiting-what-sections-of-a-page-are-indexed
@@ -46,6 +47,33 @@ type Option = {
   addHTMLAttrs?: AddHTMLAttrs[];
 };
 
+const conditionMatches = (node: Element, condition: Condition): boolean => {
+  if (condition.tagName && node.tagName !== condition.tagName) {
+    return false;
+  }
+
+  if (condition.id && node.properties.id !== condition.id) {
+    return false;
+  }
+
+  if (condition.class) {
+    const { matchAll, matchAny } = condition.class;
+    const classNames = Array.isArray(node.properties.class)
+      ? node.properties.class
+      : [node.properties.class];
+
+    if (matchAll && !matchAll.every((cls) => classNames.includes(cls))) {
+      return false;
+    }
+
+    if (matchAny && !matchAny.some((cls) => classNames.includes(cls))) {
+      return false;
+    }
+  }
+
+  return true;
+};
+
 /**
  * A rehype plugin to configure Pagefind indexing options
  */
@@ -59,10 +87,11 @@ export const rehypePagefindIndexing: Plugin<Option[], Root> = (
   ) => {
     for (const element of limitSections) {
       visit(tree, "element", (node) => {
-        if (
-          element.condition.tagName &&
-          node.tagName !== element.condition.tagName
-        ) {
+        if (Object.keys(element.condition).length === 0) {
+          return;
+        }
+
+        if (!conditionMatches(node, element.condition)) {
           return;
         }
 
@@ -78,10 +107,11 @@ export const rehypePagefindIndexing: Plugin<Option[], Root> = (
   ) => {
     for (const element of ignoreIndividualElements) {
       visit(tree, "element", (node) => {
-        if (
-          element.condition.tagName &&
-          node.tagName !== element.condition.tagName
-        ) {
+        if (Object.keys(element.condition).length === 0) {
+          return;
+        }
+
+        if (!conditionMatches(node, element.condition)) {
           return;
         }
 
@@ -97,10 +127,11 @@ export const rehypePagefindIndexing: Plugin<Option[], Root> = (
   ) => {
     for (const element of addHTMLAttrs) {
       visit(tree, "element", (node) => {
-        if (
-          element.condition.tagName &&
-          node.tagName !== element.condition.tagName
-        ) {
+        if (Object.keys(element.condition).length === 0) {
+          return;
+        }
+
+        if (!conditionMatches(node, element.condition)) {
           return;
         }
 
