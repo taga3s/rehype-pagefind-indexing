@@ -87,6 +87,7 @@ export const rehypePagefindIndexing: Plugin<Option[], Root> = (
   ) => {
     for (const element of limitSections) {
       visit(tree, "element", (node) => {
+        // Skip processing if the condition object is empty, as there are no criteria to match.
         if (Object.keys(element.condition).length === 0) {
           return;
         }
