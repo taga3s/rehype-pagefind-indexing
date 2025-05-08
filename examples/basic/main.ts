@@ -2,7 +2,7 @@ import { unified } from "https://esm.sh/unified@11.0.5";
 import remarkParse from "https://esm.sh/remark-parse@11.0.0";
 import remarkRehype from "https://esm.sh/remark-rehype@11.1.2";
 import rehypeStringify from "https://esm.sh/rehype-stringify@10.0.1";
-import { rehypePagefindIndexing } from "../../mod.ts";
+import { rehypePagefindIndexing } from "jsr:@taga3s/rehype-pagefind-indexing";
 
 const process = async (text: string): Promise<string> => {
   const result = await unified()
